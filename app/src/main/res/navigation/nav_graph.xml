@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.example.basickotlin.wordlist.WordListFragment"
+        android:label="WordListFragment" >
+        <action
+            android:id="@+id/action_wordListFragment_to_detailNoteFragment"
+            app:destination="@id/detailNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.basickotlin.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_noteListFragment"
+            app:destination="@id/noteListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_wordListFragment"
+            app:destination="@id/wordListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNoteFragment"
+        android:name="com.example.basickotlin.DetailNoteFragment"
+        android:label="DetailNoteFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.example.basickotlin.data.Data" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteListFragment"
+        android:name="com.example.basickotlin.NoteListFragment"
+        android:label="NoteListFragment" >
+        <action
+            android:id="@+id/action_noteListFragment_to_detailNoteFragment"
+            app:destination="@id/detailNoteFragment" />
+    </fragment>
+</navigation>
